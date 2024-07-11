@@ -32,4 +32,5 @@ int n;
 		arr.push_back(num);
 	}
 	peakIndexInMountainArray(arr);
+	return 0;
 }
