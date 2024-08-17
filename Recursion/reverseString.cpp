@@ -1,10 +1,11 @@
 #include<iostream>
 using namespace std;
-string reverseString(string str1, int start, int end) {
-    if ( start >= end )  return str1 ;
+void reverseString(string& str1, int start) {
+    if ( start >= str1.length() - start -1 )  return  ;
     else {
-        swap (str1[start], str1[end]);
-        return reverseString( str1, start+1, end-1 );
+        //swap (str1[start], str1[end]);
+        reverseString( str1, start+1 );
+        swap (str1[start], str1[str1.length() - start -1]);
       
     }
 }
@@ -13,7 +14,8 @@ int main (){
     cin >> str1 ;
     int size = str1.length() ;
    
-    cout << "The reversed string is : " << reverseString ( str1, 0, size-1) << endl; 
+    reverseString ( str1, 0);
+    cout << "The reversed string is : " << str1 << endl; 
 
     return 0;
 }
